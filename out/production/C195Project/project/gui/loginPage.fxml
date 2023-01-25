@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<HBox fx:id="loginPane" xmlns:fx="http://javafx.com/fxml" fx:controller="project.gui.LoginController" minHeight="350" minWidth="400" alignment="CENTER">
+    <padding>
+        <Insets>
+            <top>30</top>
+            <bottom>10</bottom>
+            <right>30</right>
+            <left>30</left>
+        </Insets>
+    </padding>
+
+    <VBox spacing="20" alignment="CENTER">
+        <Label fx:id="titleLabel" text="Scheduling Login">
+            <font>
+                <Font name="System bold" size="32"/>
+            </font>
+        </Label>
+
+        <GridPane vgap="10" hgap="10">
+            <!--    User ID Input-->
+            <Label fx:id="usernameLabel" text="Username: " GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="CENTER_RIGHT"/>
+            <TextField fx:id="usernameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <!--    Password Input-->
+            <Label fx:id="passwordLabel" text="Password: " GridPane.rowIndex="1" GridPane.columnIndex="0" alignment="CENTER_RIGHT"/>
+            <PasswordField fx:id="passwordField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <columnConstraints>
+                <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+                <ColumnConstraints percentWidth="75"/>
+            </columnConstraints>
+        </GridPane>
+
+        <ButtonBar>
+            <buttons>
+                <Button fx:id="loginButton" text="Login" onAction="#loginButtonHandler"/>
+            </buttons>
+        </ButtonBar>
+
+        <HBox alignment="CENTER">
+            <padding>
+                <Insets topRightBottomLeft="20"/>
+            </padding>
+
+            <!--    Location Label (ZoneId)-->
+            <Label fx:id="locationLabel" text="Location: " alignment="CENTER_RIGHT"/>
+            <Label fx:id="locationLabelText" text="PLACEHOLDER"/>
+        </HBox>
+    </VBox>
+
+</HBox>

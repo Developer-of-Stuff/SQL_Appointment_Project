@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:id="addCustomerPane" xmlns:fx="http://javafx.com/fxml" fx:controller="project.gui.AddCustomerRecordController" minHeight="400.0" minWidth="400.0">
+    <padding>
+        <Insets topRightBottomLeft="30"/>
+    </padding>
+
+    <Label text="Add Customer Record">
+        <padding>
+            <Insets>
+                <bottom>15</bottom>
+            </Insets>
+        </padding>
+        <font>
+            <Font name="System bold" size="26"/>
+        </font>
+    </Label>
+
+    <GridPane vgap="10" hgap="10" minWidth="500">
+        <Label text="ID" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label text="Name" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label text="Address" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label text="Postal Code" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label text="Phone" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <Label text="Country" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <Label text="First-Level Division" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+
+        <TextField fx:id="idField" promptText="PLACEHOLDER" disable="true" GridPane.rowIndex="0" GridPane.columnIndex="1">
+            <font>
+                <Font name="System italics"/>
+            </font>
+        </TextField>
+        <TextField fx:id="nameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <TextField fx:id="addressField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <TextField fx:id="postalCodeField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <TextField fx:id="phoneField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <ComboBox fx:id="countryField" GridPane.rowIndex="5" GridPane.columnIndex="1" onAction="#countryFieldHandler"/>
+        <ComboBox fx:id="divisionField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="40"/>
+            <ColumnConstraints percentWidth="60"/>
+        </columnConstraints>
+    </GridPane>
+
+    <ButtonBar>
+        <buttons>
+            <Button text="Add Customer" ButtonBar.buttonData="RIGHT" onAction="#addCustomerButtonHandler"/>
+            <Button text="Cancel" ButtonBar.buttonData="RIGHT" onAction="#windowCloseHandler"/>
+        </buttons>
+
+        <padding>
+            <Insets>
+                <top>30</top>
+            </Insets>
+        </padding>
+    </ButtonBar>
+</VBox>

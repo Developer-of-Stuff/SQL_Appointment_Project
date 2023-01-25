@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox fx:id="appointmentsPane" xmlns:fx="http://javafx.com/fxml" fx:controller="project.gui.AppointmentsController" minHeight="500" minWidth="800">
+    <padding>
+        <Insets topRightBottomLeft="30"/>
+    </padding>
+
+    <Label text="Appointments">
+        <font>
+            <Font size="32"/>
+        </font>
+    </Label>
+
+    <HBox>
+        <TabPane>
+            <Tab fx:id="monthTab" text="Month View" closable="false">
+                <VBox>
+                    <HBox spacing="10">
+                        <padding>
+                            <Insets>
+                                <top>10</top>
+                                <bottom>10</bottom>
+                            </Insets>
+                        </padding>
+
+                        <Label text="Filter to Month:"/>
+                        <ComboBox fx:id="monthSelector" onAction="#monthSelectionHandler"/>
+                        <Button text="Clear Filters" onAction="#clearFiltersHandler"/>
+                    </HBox>
+                    <TableView fx:id="monthlyAppointmentView">
+                        <columns>
+                            <TableColumn fx:id="appointmentId" text="Appointment ID"/>
+                            <TableColumn fx:id="appointmentTitle" text="Title"/>
+                            <TableColumn fx:id="appointmentDescription" text="Description"/>
+                            <TableColumn fx:id="appointmentLocation" text="Location"/>
+                            <TableColumn fx:id="appointmentContact" text="Contact"/>
+                            <TableColumn fx:id="appointmentType" text="Type"/>
+                            <TableColumn fx:id="appointmentStartDatetime" text="Start Date and Time"/>
+                            <TableColumn fx:id="appointmentEndDatetime" text="End Date and Time"/>
+                            <TableColumn fx:id="appointmentCustomer" text="Customer"/>
+                            <TableColumn fx:id="appointmentUser" text="User"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <Tab text="Week View" closable="false">
+                <VBox>
+                    <HBox spacing="10">
+                        <padding>
+                            <Insets>
+                                <top>10</top>
+                                <bottom>10</bottom>
+                            </Insets>
+                        </padding>
+
+                        <Label text="Filter to Week of:"/>
+                        <TextField fx:id="filterByDate" promptText="M/d/yyyy"/>
+                        <Button text="Apply Filter" onAction="#weekSelectionHandler"/>
+                        <Button text="Clear Filters" onAction="#clearFiltersHandler"/>
+                    </HBox>
+                    <TableView fx:id="weeklyAppointmentView">
+                        <columns>
+                            <TableColumn fx:id="weekAppointmentId" text="Appointment ID"/>
+                            <TableColumn fx:id="weekAppointmentTitle" text="Title"/>
+                            <TableColumn fx:id="weekAppointmentDescription" text="Description"/>
+                            <TableColumn fx:id="weekAppointmentLocation" text="Location"/>
+                            <TableColumn fx:id="weekAppointmentContact" text="Contact"/>
+                            <TableColumn fx:id="weekAppointmentType" text="Type"/>
+                            <TableColumn fx:id="weekAppointmentStartDatetime" text="Start Date and Time"/>
+                            <TableColumn fx:id="weekAppointmentEndDatetime" text="End Date and Time"/>
+                            <TableColumn fx:id="weekAppointmentCustomer" text="Customer"/>
+                            <TableColumn fx:id="weekAppointmentUser" text="User"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+        </TabPane>
+
+        <VBox spacing="15">
+            <padding>
+                <Insets>
+                    <left>30</left>
+                    <bottom>10</bottom>
+                </Insets>
+            </padding>
+
+            <Button text="Add Appointment" maxWidth="300" minHeight="40" onAction="#addAppointmentHandler"/>
+            <Button text="Update Appointment" maxWidth="300" minHeight="40" onAction="#updateAppointmentHandler"/>
+            <Button text="Delete Appointment" maxWidth="300" minHeight="40" onAction="#deleteAppointmentHandler"/>
+            <Button text="Back to Dashboard" maxWidth="200" minHeight="30" onAction="#backToDashboardHandler"/>
+        </VBox>
+    </HBox>
+</VBox>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<VBox fx:id="dashboardPane" xmlns:fx="http://javafx.com/fxml" fx:controller="project.gui.DashboardController" minHeight="500" minWidth="800" alignment="CENTER">
+    <padding>
+        <Insets topRightBottomLeft="20"/>
+    </padding>
+
+    <VBox spacing="40" alignment="CENTER">
+        <Label fx:id="welcomeText" text="Welcome, PLACEHOLDER!">
+            <font>
+                <Font name="System bold" size="50"/>
+            </font>
+        </Label>
+
+        <Label fx:id="upcomingAppointments" text="No upcoming appointments." style="-fx-text-fill: red" textAlignment="CENTER">
+            <font>
+                <Font name="System italics" size="20"/>
+            </font>
+        </Label>
+
+        <Label text="Select 'Access Customer Records' to create, update, or delete customer records.">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+
+        <Label text="Select 'Access Appointments' to create, update, or delete appointments.">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+
+        <Label text="Select 'Generate Reports' to create and access customer and appointment reports.">
+            <font>
+                <Font size="20"/>
+            </font>
+        </Label>
+
+        <HBox alignment="CENTER">
+            <ButtonBar>
+                <buttons>
+                    <Button text="Access Customer Records" onAction="#customerRecordsAccessHandler"/>
+                    <Button text="Access Appointments" onAction="#appointmentsAccessHandler"/>
+                    <Button text="Generate Reports" onAction="#generateReportsHandler"/>
+                </buttons>
+            </ButtonBar>
+        </HBox>
+    </VBox>
+</VBox>

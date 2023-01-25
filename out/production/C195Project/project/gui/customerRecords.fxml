@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox fx:id="customerRecordsPane" xmlns:fx="http://javafx.com/fxml" fx:controller="project.gui.CustomerRecordsController" minHeight="500" minWidth="800">
+    <padding>
+        <Insets topRightBottomLeft="30"/>
+    </padding>
+
+    <Label text="Customer Records">
+        <font>
+            <Font size="32"/>
+        </font>
+    </Label>
+
+    <HBox>
+        <TableView fx:id="customerTableView" maxWidth="837">
+            <columns>
+                <TableColumn fx:id="customerId" maxWidth="40" text="ID" resizable="false"/>
+                <TableColumn fx:id="customerName" minWidth="170" text="Name" resizable="false"/>
+                <TableColumn fx:id="customerAddress" minWidth="200" text="Address" resizable="false"/>
+                <TableColumn fx:id="customerPostalCode" minWidth="70" text="Postal Code" resizable="false"/>
+                <TableColumn fx:id="customerPhone" minWidth="115" text="Phone" resizable="false"/>
+                <TableColumn fx:id="customerCountry" minWidth="115" text="Country" resizable="false"/>
+                <TableColumn fx:id="customerDivision" minWidth="115" text="Division" resizable="false"/>
+            </columns>
+        </TableView>
+
+        <VBox spacing="15">
+            <padding>
+                <Insets>
+                    <left>30</left>
+                    <bottom>10</bottom>
+                </Insets>
+            </padding>
+
+            <Button text="Add Customer Record" maxWidth="300" minHeight="40" onAction="#addCustomerHandler"/>
+            <Button text="Update Customer Record" maxWidth="300" minHeight="40" onAction="#updateCustomerHandler"/>
+            <Button text="Delete Customer Record" maxWidth="300" minHeight="40" onAction="#deleteCustomerHandler"/>
+            <Button text="Back to Dashboard" maxWidth="200" minHeight="30" onAction="#backToDashboardHandler"/>
+        </VBox>
+    </HBox>
+</VBox>
